@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Holiday Map</title>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <style>
+      html, body, #map-canvas {
+        height: 100%;
+        margin: 0px;
+        padding: 0px
+      }
+    </style>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCN60gMCqLl4Fmkh1TnU2rpTk4Q6-5lkpY"></script>
+    <script>
+var map;
+function initialize() {
+  var mapOptions = {
+    zoom: 11,
+    center: new google.maps.LatLng(39.775, -86.109)
+  };
+ var map = new google.maps.Map(document.getElementById('map-canvas'),
+      mapOptions);
+
+  var contentString = '<div id="content">'+
+      '<div id="siteNotice">'+
+      '</div>'+
+      '<h1 id="firstHeading" class="firstHeading">Where is Santa?</h1>'+
+      '<div id="bodyContent">'+
+      '<p><b>Indianapolis:  </b>' +
+      'Is Santa somewhere around here? <br>'+
+      'Yes he is around here somewhere, '+
+      'but you need to find him! </p>'+
+      '</div>'+
+      '</div>';
+
+  var infowindow = new google.maps.InfoWindow({
+      content: contentString
+  });
+
+  var marker = new google.maps.Marker({
+      position: new google.maps.LatLng(39.775, -86.109),
+      map: map,
+      title: 'Indianapolis'
+  });
+  google.maps.event.addListener(marker, 'click', function() {
+    infowindow.open(map,marker);
+  });
+  
+   var contentString1 = '<div id="content">'+
+      '<div id="siteNotice">'+
+      '</div>'+
+      '<h1 id="firstHeading" class="firstHeading">Where is Santa?</h1>'+
+      '<div id="bodyContent">'+
+      '<p><b>Indianapolis Zoo:   </b>' +
+      'Is Santa at the zoo? <br>'+
+      'No he has not come to the zoo.  Poor animals. </p>'+
+      '</div>'+
+      '</div>';
+
+  var infowindow1 = new google.maps.InfoWindow({
+      content: contentString1
+  });
+
+  var marker1 = new google.maps.Marker({
+      position: new google.maps.LatLng(39.7692390667986, -86.19109153747559),
+      map: map,
+      title: 'Indianapolis Zoo'
+  });
+  google.maps.event.addListener(marker1, 'click', function() {
+    infowindow1.open(map,marker1);
+  });
+  
+   var contentString2 = '<div id="content">'+
+      '<div id="siteNotice">'+
+      '</div>'+
+      '<h1 id="firstHeading" class="firstHeading">Where is Santa?</h1>'+
+      '<div id="bodyContent">'+
+      '<p><b>Lucas Oil Stadium:   </b>' +
+      'Is Santa here? <br>'+
+      'Nope, but some people claim to have seen him! </p>'+
+      '</div>'+
+      '</div>';
+
+  var infowindow2 = new google.maps.InfoWindow({
+      content: contentString2
+  });
+
+  var marker2 = new google.maps.Marker({
+      position: new google.maps.LatLng(39.75946355801398, -86.16079330444336),
+      map: map,
+      title: 'Lucas Oil Stadium '
+  });
+  google.maps.event.addListener(marker2, 'click', function() {
+    infowindow2.open(map,marker2);
+  });
+
+var contentString3 = '<div id="content">'+
+      '<div id="siteNotice">'+
+      '</div>'+
+      '<h1 id="firstHeading" class="firstHeading">Where is Santa?</h1>'+
+      '<div id="bodyContent">'+
+      '<p><b>Indianapolis Motor Speedway:   </b>' +
+      'Is Santa here? <br>'+
+      'No, but I wonder if he is a racing fan. </p>'+
+      '</div>'+
+      '</div>';
+
+  var infowindow3 = new google.maps.InfoWindow({
+      content: contentString3
+  });
+
+  var marker3 = new google.maps.Marker({
+      position: new google.maps.LatLng(39.79798577319723, -86.23872756958008),
+      map: map,
+      title: 'Indianapolis Motor Speedway '
+  });
+  google.maps.event.addListener(marker3, 'click', function() {
+    infowindow3.open(map,marker3);
+  });
+  
+  var contentString4 = '<div id="content">'+
+      '<div id="siteNotice">'+
+      '</div>'+
+      '<h1 id="firstHeading" class="firstHeading">Where is Santa?</h1>'+
+      '<div id="bodyContent">'+
+      '<p><b>Indiana State Fair Commission:    </b>' +
+      'Is Santa here? <br>'+
+      'No, he already left here.  '+
+      'Keep up the search! </p>'+
+      '</div>'+
+      '</div>';
+
+  var infowindow4 = new google.maps.InfoWindow({
+      content: contentString4
+  });
+
+  var marker4 = new google.maps.Marker({
+      position: new google.maps.LatLng(39.827390612823706, -86.13856315612793),
+      map: map,
+      title: 'Indiana State Fair Commission '
+  });
+  google.maps.event.addListener(marker4, 'click', function() {
+    infowindow4.open(map,marker4);
+  });
+
+
+var contentString5 = '<div id="content">'+
+      '<div id="siteNotice">'+
+      '</div>'+
+      '<h1 id="firstHeading" class="firstHeading">Where is Santa?</h1>'+
+      '<div id="bodyContent">'+
+      '<p><b>IUPUI:   </b>' +
+      'Is Santa here? <br>'+
+      'A street Santa or two, but he already left.  '+
+      'He might be somewhere close by. </p>'+
+      '</div>'+
+      '</div>';
+
+  var infowindow5 = new google.maps.InfoWindow({
+      content: contentString5
+  });
+
+  var marker5 = new google.maps.Marker({
+      position: new google.maps.LatLng(39.77523124918337, -86.1750841140747),
+      map: map,
+      title: 'IUPUI '
+  });
+  google.maps.event.addListener(marker5, 'click', function() {
+    infowindow5.open(map,marker5);
+  });
+
+
+var contentString6 = '<div id="content">'+
+      '<div id="siteNotice">'+
+      '</div>'+
+      '<h1 id="firstHeading" class="firstHeading">Where is Santa?</h1>'+
+      '<div id="bodyContent">'+
+      '<p><b>Fort Harrison State Park:   </b>' +
+      'Is Santa here? <br>'+
+      'He has not come this way yet.  Keep searching for him! </p>'+
+      '</div>'+
+      '</div>';
+
+  var infowindow6 = new google.maps.InfoWindow({
+      content: contentString6
+  });
+
+  var marker6 = new google.maps.Marker({
+      position: new google.maps.LatLng(39.86810518980004, -86.01767063140869),
+      map: map,
+      title: 'Fort Harrison State Park '
+  });
+  google.maps.event.addListener(marker6, 'click', function() {
+    infowindow6.open(map,marker6);
+  });
+
+
+var contentString7 = '<div id="content">'+
+      '<div id="siteNotice">'+
+      '</div>'+
+      '<h1 id="firstHeading" class="firstHeading">Where is Santa?</h1>'+
+      '<div id="bodyContent">'+
+      '<p><b>Holiday Park:    </b>' +
+      'Is Santa here? <br>'+
+      'No, but he was here earlier!  Keep searching! </p>'+
+      '</div>'+
+      '</div>';
+
+  var infowindow7 = new google.maps.InfoWindow({
+      content: contentString7
+  });
+
+  var marker7 = new google.maps.Marker({
+      position: new google.maps.LatLng(39.8712437254444, -86.16175889968872),
+      map: map,
+      title: 'Holiday Park '
+  });
+  google.maps.event.addListener(marker7, 'click', function() {
+    infowindow7.open(map,marker7);
+  });
+
+var contentString8 = '<div id="content">'+
+      '<div id="siteNotice">'+
+      '</div>'+
+      '<h1 id="firstHeading" class="firstHeading">Where is Santa?</h1>'+
+      '<div id="bodyContent">'+
+      '<p><b>Childrens Museum of Indianapolis:    </b>' +
+      'Is Santa here? <br>'+
+      'Yes to give all the children their toys early this year! </p>'+
+      '</div>'+
+      '</div>';
+
+  var infowindow8 = new google.maps.InfoWindow({
+      content: contentString8
+  });
+
+  var marker8 = new google.maps.Marker({
+      position: new google.maps.LatLng(39.81062941781357, -86.1576497554779),
+      map: map,
+      title: 'Childrens Museum of Indianapolis '
+  });
+  google.maps.event.addListener(marker8, 'click', function() {
+    infowindow8.open(map,marker8);
+  });
+
+var contentString9 = '<div id="content">'+
+      '<div id="siteNotice">'+
+      '</div>'+
+      '<h1 id="firstHeading" class="firstHeading">Where is Santa?</h1>'+
+      '<div id="bodyContent">'+
+      '<p><b>Eagle Creek Park:    </b>' +
+      'Is Santa here? <br>'+
+      'He is not here, unfortunately.  Keep searching! </p>'+
+      '</div>'+
+      '</div>';
+
+  var infowindow9 = new google.maps.InfoWindow({
+      content: contentString9
+  });
+
+  var marker9 = new google.maps.Marker({
+      position: new google.maps.LatLng(39.8722647638691, -86.29765033721924),
+      map: map,
+      title: 'Eagle Creek Park '
+  });
+  google.maps.event.addListener(marker9, 'click', function() {
+    infowindow9.open(map,marker9);
+  });
+
+
+}
+
+google.maps.event.addDomListener(window, 'load', initialize);
+
+    </script>
+  </head>
+  <body>
+    <div id="map-canvas"></div>
+  </body>
+</html>
+
